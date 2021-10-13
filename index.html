@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>assignmenthell</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		html{font-family: 'Jua', sans-serif;}
+
+    	#bigtitle{
+    		position: relative;
+    		text-align: center;
+    		padding: 100px;
+    		z-index: 9;
+    	}
+
+ 
+    	#content{
+    		z-index: 9;
+    		width: 1000px;
+    		padding-top: 5px;
+    		margin: auto;
+    		display: flex;
+    		flex-direction: row;
+    		flex-wrap: wrap;
+    		justify-content: space-between;
+    		place-item:  center;
+    		text-align: center;
+    	}
+    	#zzalBut{
+    		z-index: 9;
+    		width: 30%;
+    		display: flex;
+    		flex-direction: column;
+    		align-items: center;
+    		text-align: center;
+    		padding: 350px;
+    		padding-top: 0;
+
+
+    	}
+    	#yourpic{
+    		z-index: 9;
+    		display: flex;
+    		flex-direction: column;
+    		align-items: center;
+    		text-align: center;
+    		padding: 100px;
+    		padding-top: 0;
+
+    	}
+    	
+
+    	.grade{position: absolute; left: 0;top: 0;}
+
+    	
+
+
+
+
+	</style>
+</head>
+<body>
+	<header>
+		<div id="bigtitle" style="font-size: 40px; margin-top: 20px; padding-top: 100px;padding-bottom: 40px; z-index: 9;">
+			<h1>
+			중간고사를 앞둔 당신을 위한 짤 뽑기!	
+			</h1>
+		
+		</div>
+	
+
+	</header>
+
+	<section style="margin-bottom: 320px;">
+
+
+		<div id="content">
+			
+				<img id= yourpic src= "pic1.jpg">
+				<img id="zzalBut" src= "randombtn1.png">
+				<audio id="butSnd"src="sndeffect.wav"></audio>  
+		</div>
+
+		<script type="text/javascript">	
+
+			var t =["pic1","pic2","pic3","pic4","pic5","pic6","pic7","pic8","pic9","pic10","pic11"];
+			//var a =[t[randomBH(0,6)]]
+
+			
+				//<img id="yourpic" src= "a" + ".jpg">
+
+
+		
+				
+			var state = "off";
+
+			zzalBut.onclick= function(){
+				if(state=="off"){
+					zzalBut.src="randombtn.png";
+					yourpic.src=t[randomBH(0,10)] + ".jpg";
+					butSnd.play();
+
+					var a =["grade","grade2","grade3"];
+
+
+
+					for(var i=0; i<50; i++){
+						var b = document.createElement("img");
+						b.className="grade";
+						b.src = a[randomBH(0,2)] + ".png"
+						b.style.width=randomBH(50,100) + "px";
+						b.style.height="auto";
+						b.style.left=Math.random()*screen.availWidth+"px";
+						b.style.top=Math.random()*screen.availHeight+"px";
+						document.body.appendChild(b);
+					}
+
+
+					state="on";
+
+				}else if (state=="on"){
+					zzalBut.src="randombtn1.png";
+					butSnd.pause();
+					state="off";
+				}
+
+			}
+
+
+
+			var a =["grade","grade2","grade3"];
+
+
+
+			for(var i=0; i<50; i++){
+				var b = document.createElement("img");
+				b.className="grade";
+				b.src = a[randomBH(0,2)] + ".png"
+				b.style.width=randomBH(100,200) + "px";
+				b.style.height="auto";
+				b.style.left=Math.random()*screen.availWidth+"px";
+				b.style.top=Math.random()*screen.availHeight+"px";
+				document.body.appendChild(b);
+			}
+
+
+
+			function randomBH(min, max) {
+  				min = Math.ceil(min);
+  				max = Math.floor(max);
+  			return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+
+
+
+			
+		</script>
+			
+		</div>
+	
+
+	</section>
+
+</body>
+</html>
